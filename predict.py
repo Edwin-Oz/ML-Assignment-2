@@ -5,12 +5,17 @@ import os
 
 model = load_model('hotdog_classifier.h5')
 
+# Get the current directory of the predict.py script
+current_dir = os.path.dirname(os.path.abspath(__file__))
 
-# Path to Not Hot dog folder
-test_folder = '/Users/edwin/Documents/Machine Learning/ML-Assignment-2/test/test_not_hot_dog'
+# Define the relative path to the test_hot_dog folder
+relative_path = 'test/test_hot_dog'
 
-# path to hot dog folder
-#test_folder = '/Users/edwin/Documents/Machine Learning/ML-Assignment-2/test/test_hot_dog'
+# Define the relative path to the test_not_hot_dog folder
+#relative_path = 'test/test_not_hot_dog'
+
+# Combine the current directory with the relative path to get the absolute path
+test_folder = os.path.join(current_dir, relative_path)
 
 # Set the desired number of images to process
 num_images_to_process = 10000 # Process all images
